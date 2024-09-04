@@ -23,11 +23,11 @@ Based on quite detailed FPL datasets, an analysis is carried out, after which th
 Windows: `.\venv\Scripts\activate`  
 Linux: `source venv/bin/activate`
 
-6. Install necessary libraries
+5. Install necessary libraries
 
 `pip install -r requirements.txt`
 
-7. Copy the data from previous seasons here: `[REPO_ROOT]/data/historical/`  
+6. Copy the data from previous seasons here: `[REPO_ROOT]/data/historical/`  
 If you cannot get it from the official FPL website, you can probably find them online, e.g. there:
 [vaastav's FPL](https://github.com/vaastav/Fantasy-Premier-League)
 
