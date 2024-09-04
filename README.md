@@ -37,6 +37,14 @@ If you cannot get it from the official FPL website, you can probably find them o
 
 As a result, an XLSX file should be created in the `[REPO]/results/` directory, marked with today's datestamp in its name.
 
+
+## Pipeline
+
+The following flowchart illustrates, in simplified form, the pipeline that is executed when the script is launched:  
+
+![fpl-pipeline-v1](https://github.com/user-attachments/assets/afa3a931-7264-4c96-a282-f6058d970800)
+
+
 ## Additional info
 
 This is a BETA version of my app. I can already see that a few aspects need to be improved, 
