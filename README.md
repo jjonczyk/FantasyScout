@@ -2,7 +2,7 @@
 
 This is a project dedicated to supporters of the top league in English football, especially Fantasy Premier League players.
 The code allows you to search for players who should perform the best in upcoming meetings. 
-Based on a quite detailed FPL datasets, an analysis is carried out, after which the program selects a ready-to-use, 15-players lineup taking into account the budget set by the creators (100M).
+Based on quite detailed FPL datasets, an analysis is carried out, after which the program selects a ready-to-use, 15-players lineup taking into account the budget set by the creators (100M).
 
 ## Installation
 
@@ -20,7 +20,7 @@ Based on a quite detailed FPL datasets, an analysis is carried out, after which 
 
 4. Activate your venv
 
-Windows: `.\venv\Scripts\activate`
+Windows: `.\venv\Scripts\activate`  
 Linux: `source venv/bin/activate`
 
 6. Install necessary libraries
