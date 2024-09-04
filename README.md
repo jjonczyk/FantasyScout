@@ -8,18 +8,27 @@ Based on a quite detailed FPL datasets, an analysis is carried out, after which 
 
 1. Clone the repository to your local directory
 
-`git clone [link-to-repository]`
+`git clone https://github.com/jjonczyk/FantasyScout.git`
 
-2. Create a virtual environment
+2. Enter the project directory
+
+`cd FantasyScout`
+
+3. Create a virtual environment
 
 `python -m venv ./venv`
 
-3. Install necessary libraries
+4. Activate your venv
+
+Windows: `.\venv\Scripts\activate`
+Linux: `source venv/bin/activate`
+
+6. Install necessary libraries
 
 `pip install -r requirements.txt`
 
-4. Copy the data from previous seasons here: `[REPO_ROOT]/data/historical/`  
-If you cannot get it from the official FPL website, you can probably do so online e.g. from there:
+7. Copy the data from previous seasons here: `[REPO_ROOT]/data/historical/`  
+If you cannot get it from the official FPL website, you can probably find them online, e.g. there:
 [vaastav's FPL](https://github.com/vaastav/Fantasy-Premier-League)
 
 ## Running the script
