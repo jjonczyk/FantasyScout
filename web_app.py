@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template
 
 from data_processing.constants import FINAL_VIEW_COLUMNS
 from fantasy_scout import FantasyScout
@@ -13,8 +13,10 @@ def return_dataframe():
     scout.my_team = FantasyScout.add_comments(scout.my_team)
     final_df = scout.my_team[FINAL_VIEW_COLUMNS]
 
-    # Return DataFrame in JSON format
-    return jsonify(final_df.to_dict(orient='records'))
+    # Convert DataFrame to HTML w/ Bootstrap
+    table_html = final_df.to_html(classes='table table-striped', index=False)
+    return render_template('table.html', table=table_html)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
