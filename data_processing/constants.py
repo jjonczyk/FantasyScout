@@ -28,3 +28,9 @@ LIMITS = {
     "one_team": 3,
     "all": 15
 }
+
+# For human-readable purposes in the online view
+FINAL_VIEW_COLUMNS = [
+    'first_name','second_name', 'position', 'team_name', 'now_cost',
+    'ict_index', 'starts', 'minutes', 'fixtures_difficulty', 'comments'
+]
