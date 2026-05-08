@@ -51,12 +51,11 @@ def find_best_players(
 
 
 def select_my_team(elements_df: pd.DataFrame, def_teams: List[str], off_teams: List[str]) -> pd.DataFrame:
-    my_team = list()
+    best_team = list()
     for bp_limit in range(LIMITS['all'] + 1):
         wallet = 1000
 
         selected_ids = set()
-        prev_team = my_team
         clubs_usage = dict()
         position_usage = dict()
         my_team = list()
@@ -112,6 +111,13 @@ def select_my_team(elements_df: pd.DataFrame, def_teams: List[str], off_teams: L
                 else:
                     position_usage[position] = 0
 
+                # Skip players we cannot afford so a cheaper candidate further down
+                # the sorted list can take this slot instead of leaving it empty.
+                if wallet - player_data['now_cost'] < 0:
+                    print(
+                        f"Rejected: {player_data['first_name']} {player_data['second_name']} | cost {player_data['now_cost']} exceeds remaining budget {wallet}")
+                    continue
+
                 # Best performing players - check limit, update counter
                 if condition == PERF_IDX:
                     if bp_counter >= bp_limit:
@@ -130,6 +136,9 @@ def select_my_team(elements_df: pd.DataFrame, def_teams: List[str], off_teams: L
                 wallet -= player_data['now_cost']
                 print(f"Budget remained: {wallet}")
 
-                if wallet < 0:
-                    my_team = prev_team
-                    return pd.DataFrame(my_team)
+        # Only accept a pass that produced a full 15-player squad. Higher bp_limit
+        # means more best-performers were attempted, so the latest valid team wins.
+        if check_total_limit_reached(my_team):
+            best_team = my_team
+
+    return pd.DataFrame(best_team)
